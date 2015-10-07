@@ -1,6 +1,6 @@
 #splash {
-  width: 568px;
-  height: 377px;
+  max-width: 45%;
+  max-height: 15%;
   display: block;
   margin-left: auto;
   margin-right:auto;
@@ -11,6 +11,11 @@
 body {
   text-align: center;
   font-family: 'Roboto Slab', serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 nav {
