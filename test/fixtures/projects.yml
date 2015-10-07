@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  laguage_id: MyString
+  integer: MyString
+  title: MyString
+  description: MyText
+
+two:
+  laguage_id: MyString
+  integer: MyString
+  title: MyString
+  description: MyText
