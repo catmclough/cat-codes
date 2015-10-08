@@ -3,7 +3,7 @@
 }
 
 #projects-show-container {
-  margin: 3em 15em 3em 15em;
+  margin: 1em 15em 1em 15em;
 }
 
 #project-title {
@@ -15,6 +15,7 @@
 }
 
 #project-link, #github-link{
+  text-align: center;
   margin-top: 2em;
   text-decoration: underline;
 }
@@ -24,10 +25,13 @@
   font-weight: bold;
 }
 
-#screenshot img{
-  width: 50%;
+#screenshots {
+  display: inline;
+}
+
+#screenshots img{
+  display: inline-block;
+  width: 49%;
   height: 40%;
-  margin-left: 25%;
-  margin-left: 25%;
   margin-top: 3%;
 }
