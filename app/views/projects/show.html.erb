@@ -3,7 +3,7 @@
 <div id="project-description"><%= this_project.description %></div>
 
 <% if this_project.language == "Processing" %>
-  <canvas data-processing-sources="/assets/pjs/<%=this_project.title.gsub(/\s+/, "").downcase%>.pde"></canvas>
+  <canvas data-processing-sources=<%= asset_path "pjs/bartsimpson.pde" %>></canvas>
 <% end %>
 
 <% if this_project.url %>
