@@ -2,7 +2,7 @@
   <p>A selection of my projects for New York University's Interactive Computing class with Professor Craig Kapp in the fall of 2014. The projects are all written in Processing and are listed in chronological order, culminating with 'Doodle Jump' - my final project for the class.</p>
 
   <% Project.where(language: "Processing").each do |project| %>
-    <%= link_to project.title, "/projects/#{project.id}" %>
+    <%= link_to project.title, project %>
   <% end %>
 
 <!--   <div class="title"><a href="bart-sketch.html">Clickable Bart Simpson</a></div>
