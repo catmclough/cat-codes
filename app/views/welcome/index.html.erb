@@ -1,12 +1,15 @@
-<img id="splash" src="https://41.media.tumblr.com/b1da647e27866b32101295f8ff2e307b/tumblr_nrrdsirarZ1qa6qjbo1_1280.jpg" />
+<div id="home-container">
+  <div id="name-block">
+    <div id="name">Cat McLoughlin</div>
+    <div id="title">software developer</div>
+  </div>
+  <hr></hr>
 
-<h3>Cat McLoughlin</h3>
-<p>Software Developer</p>
-<hr></hr>
-
-<nav><%= mail_to "catmclough@gmail.com", "email me", subject: "Hi Cat!" %> | </nav>
-<nav><%= link_to "my projects", projects_path %></nav>
-<br>
-<a id="contact-link" href="https://linkedin.com/in/catmcloughlin"><%= image_tag "linkedin-logo.png" %></a>
-<a id="contact-link" href="https://github.com/catmclough"><%= image_tag "github-logo.jpg" %></a>
-<a id="contact-link" href="https://twitter.com/smitty_smat"><%= image_tag "twitter-logo.png" %></a>
+  <nav><%= mail_to "catmclough@gmail.com", "email me", subject: "Hi Cat!" %></nav>
+  <nav> | </nav>
+  <nav><%= link_to "my projects", projects_path %></nav>
+  <br>
+  <a id="contact-link" href="https://linkedin.com/in/catmcloughlin"><%= image_tag "linkedin-logo.png" %></a>
+  <a id="contact-link" href="https://github.com/catmclough"><%= image_tag "github-logo.jpg" %></a>
+  <a id="contact-link" href="https://twitter.com/smitty_smat"><%= image_tag "twitter-logo.png" %></a>
+</div>
