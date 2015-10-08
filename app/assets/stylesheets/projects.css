@@ -2,6 +2,21 @@
   margin: 3em 15em 3em 15em;
 }
 
+.language-name {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  text-decoration: underline;
+}
+
+.project-title {
+  font-size: 1.5em;
+  margin-left: 5%;
+}
+
+.project-title:hover {
+  font-weight: bold;
+}
+
 #projects-show-container {
   margin: 1em 15em 1em 15em;
 }

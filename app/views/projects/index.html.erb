@@ -1,13 +1,13 @@
 <div id="projects-index-container">
-<h3>Processing</h3>
-  <p>A selection of my projects for New York University's Interactive Computing class with Professor Craig Kapp in the fall of 2014. The projects are listed in chronological order.</p>
-
+<div class="language-name">Java + Processing</div>
   <% Project.where(language: "Processing").each do |project| %>
-    <%= link_to project.title, project %>
+    <div class="project-title"><%= link_to project.title, project %></div>
+    <br>
   <% end %>
 
-<h3>Ruby on Rails</h3>
+<div class="language-name">Ruby on Rails</div>
   <% Project.where(language: "Ruby on Rails").each do |project| %>
-    <%= link_to project.title, project %>
+    <div class="project-title"><%= link_to project.title, project %></div>
+    <br>
   <% end %>
 </div>

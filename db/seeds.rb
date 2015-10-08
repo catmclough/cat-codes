@@ -8,8 +8,10 @@
 
 Project.create(language: "Processing",
                title: "Bart Simpson",
-               description: "This is my 'Hello World' project that I wrote in first week of learning Processing. Working on this project, I figured out the basics of sketching in Processing, how to draw shapes on a canvas, and basic event handling.",
-               date_of_creation: 20140909)
+               description: "As my 'Hello World' project in Craig Kapp's Interactive Computing Class at NYU, I made a sketch of Bart Simpson using vector graphics. To create this simple interactive sketch I had to learn the basics of sketching in Processing, how to draw shapes on a canvas, and click-event handling. When you click on the sketch of Bart, words appear like magic!",
+               date_of_creation: 20140909,
+               github_url: "https://github.com/catmclough/bart-in-processing"
+               )
 
 Project.create(language: "Ruby on Rails",
                title: "WikiLeagues",
