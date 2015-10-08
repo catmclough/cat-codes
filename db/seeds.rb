@@ -12,7 +12,7 @@ Project.create(language: "Processing",
                date_of_creation: 20140909)
 
 Project.create(language: "Ruby on Rails",
-               title: "WikiLeagues (Client Project)",
+               title: "WikiLeagues",
                description: "I worked on this project with a team of 4 developers over the course of 2 days at Dev Bootcamp. The premise of the project is that a client (one of our instructors) proposed the idea for a website where groups of people (such as teams, leagues, or clubs) could have a page where members of the group can post articles. The articles, as the client requested, are editable, but each time an article is edited a new 'version' is created so that older versions can still be accessed.\nWe fulfilled this requirement and added features such as secure user authentication (using BCrypt), flash notifications, a markdown editing widget, and more!",
                date_of_creation: 20150925,
                url: "https://wikileagues.herokuapp.com",

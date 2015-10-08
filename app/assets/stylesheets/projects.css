@@ -23,3 +23,11 @@
   color: green;
   font-weight: bold;
 }
+
+#screenshot img{
+  width: 50%;
+  height: 40%;
+  margin-left: 25%;
+  margin-left: 25%;
+  margin-top: 3%;
+}
