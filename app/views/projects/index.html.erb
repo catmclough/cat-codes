@@ -5,10 +5,9 @@
     <%= link_to project.title, project %>
   <% end %>
 
-<!--   <div class="title"><a href="bart-sketch.html">Clickable Bart Simpson</a></div>
-  <div class="title"><a href="chase-game.html">Frogger Soccer</a></div>
-  <div class="title"><a href="halloween-game.html">Spooky Halloween Game</a></div> -->
-
 <h3>Ruby on Rails</h3>
   <p>Projects completed at Dev Bootcamp in the summer of 2015.</p>
-  <div class="title"><%= link_to "NoFences", "https://nofenceschicago.herokuapp.com" %></div>
+
+  <% Project.where(language: "Ruby on Rails").each do |project| %>
+    <%= link_to project.title, project %>
+  <% end %>

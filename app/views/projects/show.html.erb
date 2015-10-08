@@ -1,8 +1,16 @@
 <h1><%= this_project.title %></h1>
-<div id="project-date">Created on <%=this_project.date_of_creation.to_formatted_s(:long_ordinal) %></div>
+<div id="project-date">Created on <%= this_project.date_of_creation.to_formatted_s(:long_ordinal) %></div>
 <div id="project-description"><%= this_project.description %></div>
 
-<%if this_project.language == "Processing" %>
+<% if this_project.language == "Processing" %>
   <canvas data-processing-sources="/assets/pjs/<%=this_project.title.gsub(/\s+/, "").downcase%>.pde"></canvas>
+<% end %>
+
+<% if this_project.url %>
+  <div class="project-link"><%= link_to "#{this_project.url}", this_project.url %>
+<% end %>
+
+<% if this_project.github_url %>
+  <div class="project-link"><%= link_to "#{this_project.title} on GitHub", this_project.github_url %>
 <% end %>
 
