@@ -8,8 +8,13 @@
 
 Project.create(language: "Processing",
                title: "Bart Simpson",
-               description: "This is my 'Hello World' project that I wrote in first week of learning Processing. Working on this project, I figured out the basics of sketching in Processing, how to draw shapes on a canvas, and basic event handling.",
+               description: "This is my 'Hello World' project and first-ever Processing sketch. Working on this project, I learned the basics of Processing, how to draw shapes on a canvas, and event handling./nClick on the sketch for a magical interaction.",
                date_of_creation: 20140909)
+
+Project.create(language: "Processing",
+               title: "Frogger Soccer",
+               description: "This game, inspired by frogger, uses collision detection to manipulate score and tackle variables that are updated on the screen as collisions ('tackles') occur. It also makes use of the Minim library to play a song throughout the game./nUse the arrow keys to move the ball to the top of the field and avoid defenders. Reaching the middle-top of the field results in a goal. Get tackled by a defender 5 times and the game is over.",
+               date_of_creation: 20140916)
 
 Project.create(language: "Ruby on Rails",
                title: "NoFences",
