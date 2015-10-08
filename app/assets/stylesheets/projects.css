@@ -1,0 +1,25 @@
+#projects-index-container {
+  margin: 3em 15em 3em 15em;
+}
+
+#projects-show-container {
+  margin: 3em 15em 3em 15em;
+}
+
+#project-title {
+  font-size: 4em;
+}
+
+#project-description {
+  margin-top: 2em;
+}
+
+#project-link, #github-link{
+  margin-top: 2em;
+  text-decoration: underline;
+}
+
+#project-link:hover, #github-link:hover {
+  color: green;
+  font-weight: bold;
+}
