@@ -18,15 +18,18 @@
 }
 
 #projects-show-container {
-  margin: 1em 15em 1em 15em;
+  margin: 0.6em 10em 0.6em 10em;
 }
 
 #project-title {
+  font-family: 'Damion', cursive;
   font-size: 4em;
 }
 
 #project-description {
   margin-top: 2em;
+  font-size: 18px;
+  line-height: 180%;
 }
 
 #project-link, #github-link{

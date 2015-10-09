@@ -3,9 +3,9 @@
   <div id="project-date">Created on <%= this_project.date_of_creation.to_formatted_s(:long_ordinal) %></div>
   <div id="project-description"><%= this_project.description %></div>
 
-  <% if this_project.language == "Processing" %>
+<!--   <% if this_project.language == "Processing" %>
     <canvas data-processing-sources=<%= asset_path "pjs/bartsimpson.pde" %>></canvas>
-  <% end %>
+  <% end %> -->
 
   <div id="project-link">
     <% if this_project.url %>
