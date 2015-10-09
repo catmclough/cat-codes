@@ -13,6 +13,13 @@ Project.create(language: "Processing",
                github_url: "https://github.com/catmclough/bart-in-processing"
                )
 
+Project.create(language: "Processing",
+               title: "Holiday Card",
+               description: "The final exam for my Interactive Computing class was an in-class assignment to create a holiday card in one hour. The card needed to use music, a Processing library, and user interaction. I came up with a card that plays music from 'A Charlie Brown Christmas' and produces 25 white circles at the mouse's position on a click event. Those 'snowballs' are built using Processing's Fisica library and are thus given the effect of falling snow. Since the strand of 'Christmas lights' are also Fisica 'bodies', they catch the snowballs that are located above them on the X axis of the sketch as they are created. The brick wall and characters, below the lights, catch the remaining snowballs. Finally, on click, each 'light bulb' is filled with a randomly chosen festive color.",
+               date_of_creation: 20141216,
+               github_url: "https://github.com/catmclough/processing-holiday-card"
+              )
+
 Project.create(language: "Ruby on Rails",
                title: "WikiLeagues",
                description: "I worked on this project with a team of 4 developers over the course of 2 days at Dev Bootcamp. The premise of the project is that a client (one of our instructors) proposed the idea for a website where groups of people (such as teams, leagues, or clubs) could have a page where members of the group can post articles. The articles, as the client requested, are editable, but each time an article is edited a new 'version' is created so that older versions can still be accessed.\nWe fulfilled this requirement and added features such as secure user authentication (using BCrypt), flash notifications, a markdown editing widget, and more!",
@@ -28,4 +35,6 @@ Project.create(language: "Ruby on Rails",
                url: "https://nofenceschicago.herokuapp.com",
                github_url: "https://github.com/andarcabrera/NoFences"
               )
+
+
 

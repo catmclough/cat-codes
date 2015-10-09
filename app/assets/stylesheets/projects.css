@@ -3,9 +3,9 @@
 }
 
 .language-name {
+  font-family: 'Damion', cursive;
   font-size: 3em;
   margin-bottom: 0.5em;
-  text-decoration: underline;
 }
 
 .project-title {
