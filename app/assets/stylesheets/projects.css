@@ -53,3 +53,7 @@
   height: 40%;
   margin-top: 3%;
 }
+
+canvas {
+  margin: auto;
+}
