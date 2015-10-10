@@ -1,12 +1,12 @@
 <div id="projects-index-container">
 <div class="language-name">Java + Processing</div>
-  <% Project.where(language: "Processing").each do |project| %>
+  <% Project.projects_in("Processing").each do |project| %>
     <div class="project-title"><%= link_to project.title, project %></div>
     <br>
   <% end %>
 
 <div class="language-name">Ruby on Rails</div>
-  <% Project.where(language: "Ruby on Rails").each do |project| %>
+  <% Project.projects_in("Ruby on Rails").each do |project| %>
     <div class="project-title"><%= link_to project.title, project %></div>
     <br>
   <% end %>
