@@ -16,12 +16,13 @@
     <% end %>
   </div>
 
-  <div id="screenshots">
-    <%= image_tag "#{this_project.title.downcase.delete(' ')}.jpg" %>
-    <%= image_tag "#{this_project.title.downcase.delete(' ')}2.jpg" %>
-  </div>
-
   <% if this_project.language == "Processing" %>
       <%= javascript_include_tag "#{this_project.title.downcase.delete(' ')}" %>
+  <% elsif this_project.language == "Ruby on Rails" %>
+      <div id="screenshots">
+        <%= image_tag "#{this_project.title.downcase.delete(' ')}.jpg" %>
+        <%= image_tag "#{this_project.title.downcase.delete(' ')}2.jpg" %>
+      </div>
   <% end %>
+
 </div>
