@@ -19,27 +19,33 @@
 //initialize audio file
 // AudioPlayer song3;
 
-Witch bertha;
-Ghost casper;
+var bertha;
+var casper;
 
-CandyCorn[] candies = new CandyCorn[15];
+var candies = [];
 
 var backgroundImage;
 var pumpkinNormal;
 var scaredPumpkin;
 var candyCorn;
 
-int state = 1;
-int numGrabs = 0;
-int witchGrabs = 0;
+var state = 1;
+var numGrabs = 0;
+var witchGrabs = 0;
 
-int numFrames = 27;
-int currentFrame = 0;
+// var numFrames = 27;
+// var currentFrame = 0;
 // PImage[] images = new PImage[numFrames];
 
+function preload(){
+  backgroundImage = loadImage("../images/halloweengame/halloween_background.png");
+  pumpkinNormal = loadImage("assets/pumpkin_normal.png");
+  scaredPumpkin = loadImage("assets/pumpkin_shocked.png");
+  candyCorn = loadImage("assets/candy_corn.png");
+}
 
-void setup() {
-  size(800, 600);
+function setup() {
+  createCanvas(800, 600);
 
   // set up Minim
   // minim = new Minim(this);
@@ -49,19 +55,14 @@ void setup() {
 
   // song3.play();
 
-  backgroundImage = loadImage("assets/halloween_background.png");
-  pumpkinNormal = loadImage("assets/pumpkin_normal.png");
-  scaredPumpkin = loadImage("assets/pumpkin_shocked.png");
-  candyCorn = loadImage("assets/candy_corn.png");
-
   bertha = new Witch(800, random(height));
   casper = new Ghost(0, random(height));
 
    // create our candy objects
-  for (int i = 0; i < candies.length; i++)
+  for (var i = 0; i < 15; i++)
   {
     // build a new candy and store it in the appropriate slot
-    candies[i] = new CandyCorn(random(0,width), random(0,height), random(5), random(1, 3));
+    candies.push(new CandyCorn(random(0,width), random(0,height), random(5), random(1, 3)));
   }
 
   // increase the detail on our Perlin Noise landscape
@@ -73,7 +74,7 @@ void setup() {
   // }
 }
 
-void draw() {
+function draw() {
   if (state == 1) {
     frameRate(30);
     doGamePlay();
@@ -115,24 +116,25 @@ void draw() {
       casper.xPos = 0;
     }
   }
- }
- void doGamePlay() {
+ };
+
+ function doGamePlay() {
 
    // imageMode(CORNER);
    background(backgroundImage);
    imageMode(CENTER);
 
     // visit all objects and tell them to display
-    for (int i = 0; i < candies.length; i++)
+    for (var i = 0; i < candies.length; i++)
     {
       // see if the user hit any candy
-      boolean hitTest = candies[i].checkHit(mouseX, mouseY);
+      var hitTest = candies[i].checkHit(mouseX, mouseY);
       if (hitTest) {
         // add a point!
         numGrabs++;
       }
-      boolean witchHit  = candies[i].checkHit(bertha.xPos, bertha.yPos);
-      boolean ghostHit = candies[i].checkHit(casper.xPos, casper.yPos);
+      var witchHit  = candies[i].checkHit(bertha.xPos, bertha.yPos);
+      var ghostHit = candies[i].checkHit(casper.xPos, casper.yPos);
 
       if (witchHit || ghostHit) {
         witchGrabs++;
@@ -145,8 +147,8 @@ void draw() {
 
     noCursor();
 
-    float distance1 = dist(bertha.xPos, bertha.yPos, mouseX, mouseY);
-    float distance2 = dist(casper.xPos, casper.yPos, mouseX, mouseY);
+    var distance1 = dist(bertha.xPos, bertha.yPos, mouseX, mouseY);
+    var distance2 = dist(casper.xPos, casper.yPos, mouseX, mouseY);
 
     if (distance1 < 75 || distance2 < 75) {
       state = 0;
@@ -162,129 +164,95 @@ void draw() {
     text("Evil Candy: " + witchGrabs, 500, 40);
  }
 
-class CandyCorn {
+function CandyCorn(x, y, f, z) {
+  this.angle = 0;
+  this.size = 150;
+  this.xPos = x;
+  this.yPos = y;
 
-  float xPos, yPos, fallSpeed, rotation;
+  // pick a random perlin noise index
+  this.perlinIndex = random(0, 100000);
 
-  float perlinIndex;
+  this.fallSpeed = f;
+  this.rotation = z;
 
-  float angle = 0;
-
-  float size = 150;
-
-  CandyCorn(float x, float y, float f, float z) {
-    xPos = x;
-    yPos = y;
-
-    // pick a random perlin noise index
-    perlinIndex = random(0, 100000);
-
-    fallSpeed = f;
-    rotation = z;
-  }
-
-  boolean checkHit(float x, float y)
-  {
+  this.checkHit = function(x, y) {
     // touching
-    if (x > xPos-(size/2) && x < xPos+(size/2) && y > yPos-(size/2) && y < yPos+(size/2))
-    {
+    if (x > this.xPos-(this.size/2) && x < this.xPos+(this.size/2) && y > this.yPos-(this.size/2) && y < this.yPos+(this.size/2)) {
       //hide the candy
-      yPos = random(-300, -50);
-
+      this.yPos = random(-300, -50);
       return true;
-    }
-    else
-    {
+    } else {
       return false;
     }
+  };
 
-  }
-
-  void display() {
+  this.display = function() {
     // grab a random number from the Perlin noise generator
-    float r = noise(perlinIndex);
+    this.r = noise(this.perlinIndex);
 
     // turn that number into a number between -2 and 2 to simulate our swaying left and right
-    float xMovement = map(r, 0, 1, -2, 2);
+    this.xMovement = map(this.r, 0, 1, -2, 2);
 
     // add xMovement to our xPos
-    xPos += xMovement;
+    this.xPos += this.xMovement;
 
     // prevent the candy corn from going off the right or left edges
-    xPos = constrain(xPos, 0, width-50);
+    this.xPos = constrain(this.xPos, 0, width-50);
 
     //always dropping
-    yPos += fallSpeed;
+    this.yPos += this.fallSpeed;
 
     // wrapping
-    if (yPos > height)
-    {
-      yPos = -50;
+    if (this.yPos > height) {
+      this.yPos = -50;
     }
 
     // add a small amount to our Perlin noise location so next time we get a different random #
-    perlinIndex += 0.01;
+    this.perlinIndex += 0.01;
 
     //rotate corn
-    pushMatrix();
-    translate(xPos, yPos);
-    rotate( radians(angle) );
+    push();
+    translate(this.xPos, this.yPos);
+    rotate( radians(this.angle) );
 
     image(candyCorn, 0, 0);
 
-    popMatrix();
+    pop();
 
-    angle += rotation;
+    this.angle += this.rotation;
   }
+};
 
-}
+function Ghost(x, y) {
+  this.xSpeed = 1;
+  this.xPos = x;
+  this.yPos = y;
+  this.ghost = loadImage("assets/ghostright.png");
 
-class Ghost {
 
-  float xPos, yPos;
-
-  float xSpeed = 1;
-
-  PImage ghost;
-
-  Ghost(float x, float y) {
-    xPos = x;
-    yPos = y;
-
-    ghost = loadImage("assets/ghostright.png");
-  }
-
-  void display() {
-    image(ghost, xPos, yPos, 200, 161);
-    xPos += xSpeed;
-    if (xPos > 800) {
-      xPos -= 800;
-      yPos = random(height);
+  this.display = function() {
+    image(this.ghost, this.xPos, this.yPos, 200, 161);
+    this.xPos += this.xSpeed;
+    if (this.xPos > 800) {
+      this.xPos -= 800;
+      this.yPos = random(height);
     }
   }
 }
 
-class Witch {
+function Witch(x, y) {
+  this.xSpeed = 1;
+  this.xPos = x;
+  this.yPos = y;
+  this.witch = loadImage("assets/witch.png");
 
-  float xPos, yPos;
-
-  float xSpeed = 1;
-
-  PImage witch;
-
-  Witch(float x, float y) {
-    xPos = x;
-    yPos = y;
-
-    witch = loadImage("assets/witch.png");
-  }
-
-  void display() {
-    image(witch, xPos, yPos);
-    xPos -= xSpeed;
-    if (xPos < 0) {
-      xPos += 800;
-      yPos = random(height);
+  this.display = function() {
+    image(this.witch, this.xPos, this.yPos);
+    this.xPos -= this.xSpeed;
+    if (this.xPos < 0) {
+      this.xPos += 800;
+      this.yPos = random(height);
     }
   }
-}
+};
