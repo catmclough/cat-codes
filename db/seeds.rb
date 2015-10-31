@@ -14,11 +14,19 @@ Project.create(language: "Processing",
                )
 
 Project.create(language: "Processing",
+               title: "Halloween Game",
+               description: "This is a mid-term project for Craig Kapp's Interactive Computing course at NYU. The game implements 'gravity' to make candy corns fall and rotate at random speeds and X positions on the canvas. It also uses collision detection to keep track of scores, the Minim library for sound effects, two states of gameplay, and object-oriented design. Move the pumpkin around the screen using your mouse, and collect as many candy corns as possible while avoiding the deadly ghost and witch!",
+               date_of_creation: 20141028,
+               github_url: "https://github.com/catmclough/processing-halloween-game"
+              )
+
+Project.create(language: "Processing",
                title: "Holiday Card",
                description: "The final exam for my Interactive Computing class was an in-class assignment to create a holiday card in one hour. The card needed to use music, a Processing library, and user interaction. I came up with a card that plays music from 'A Charlie Brown Christmas' and produces 25 white circles at the mouse's position on a click event. Those 'snowballs' are built using Processing's Fisica library and are thus given the effect of falling snow. Since the strand of 'Christmas lights' are also Fisica 'bodies', they catch the snowballs that are located above them on the X axis of the sketch as they are created. The brick wall and characters, below the lights, catch the remaining snowballs. Finally, on click, each 'light bulb' is filled with a randomly chosen festive color.",
                date_of_creation: 20141216,
                github_url: "https://github.com/catmclough/processing-holiday-card"
               )
+
 
 Project.create(language: "Ruby on Rails",
                title: "WikiLeagues",
