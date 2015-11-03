@@ -1,7 +1,7 @@
 body {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #FAF1D9;
-  color: #395442;
+  background-image: url("clouds.jpg");
+  color: #2c3e50;
 }
 
 #home-container {
@@ -25,8 +25,9 @@ body {
 }
 
 a {
-  color: #AC9377;
+  color: #2c3e50;
   text-decoration: none;
+  font-weight: bold;
 }
 
 nav {
@@ -37,14 +38,14 @@ nav {
 }
 
 nav:hover{
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 #contact-link img{
   display: inline-block;
   margin-left: 1%;
   margin-top: 20px;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 #contact-link:hover img{
