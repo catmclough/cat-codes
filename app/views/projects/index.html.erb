@@ -1,11 +1,13 @@
+<div id="parted-clouds-left"><%= image_tag "clouds-left.png" %></div>
+<div id="parted-clouds-right"><%= image_tag "clouds-right.png" %></div>
 <div id="projects-index-container">
-<div class="language-name">Java + Processing</div>
+  <div class="language-name">Java + Processing</div>
   <% Project.projects_in("Processing").each do |project| %>
     <div class="project-title"><%= link_to project.title, project %></div>
     <br>
   <% end %>
 
-<div class="language-name">Ruby on Rails</div>
+  <div class="language-name">Ruby on Rails</div>
   <% Project.projects_in("Ruby on Rails").each do |project| %>
     <div class="project-title"><%= link_to project.title, project %></div>
     <br>
