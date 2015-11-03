@@ -1,7 +1,11 @@
 body {
   font-family: 'Ubuntu', sans-serif;
-  background-image: url("clouds.jpg");
   color: #2c3e50;
+  background-color: #FFFFFF;
+}
+
+#home-body {
+  background-image: url("clouds.jpg");
 }
 
 #home-container {
