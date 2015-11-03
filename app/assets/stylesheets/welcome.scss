@@ -1,0 +1,53 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-image: url("clouds.jpg");
+  color: #2c3e50;
+}
+
+#home-container {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 25%;
+}
+
+#name {
+  font-family: 'Damion', cursive;
+  display: inline-block;
+  font-size: 4em;
+  margin-right: 0.2em;
+}
+
+#title {
+  font-size: 1.5em;
+  font-style: italic;
+  display: inline-block;
+  margin-left: 1.5%;
+}
+
+a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav {
+  display: inline;
+  margin-left: 1%;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+nav:hover{
+  text-decoration: underline;
+}
+
+#contact-link img{
+  display: inline-block;
+  margin-left: 1%;
+  margin-top: 20px;
+  opacity: 0.85;
+}
+
+#contact-link:hover img{
+    opacity: 1.0;
+}
