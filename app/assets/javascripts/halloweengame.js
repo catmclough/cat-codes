@@ -38,8 +38,8 @@ var witchGrabs = 0;
 // PImage[] images = new PImage[numFrames];
 
 function preload(){
-  backgroundImage = loadImage("../images/halloweengame/halloween_background.png");
-  pumpkinNormal = loadImage("assets/pumpkin_normal.png");
+  backgroundImage = loadImage("assets/halloween_background.png");
+  pumpkinNormal = loadImage("assets/halloweengame/pumpkin_normal.png");
   scaredPumpkin = loadImage("assets/pumpkin_shocked.png");
   candyCorn = loadImage("assets/candy_corn.png");
 }
