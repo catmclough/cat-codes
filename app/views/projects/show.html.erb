@@ -17,7 +17,7 @@
 
   <% if this_project.language == "Processing" %>
       <div id="demo">
-        <% if FileTest.exist? "#{RAILS_ROOT}/public/images/#{this_project.title.downcase.delete(' ')}.gif" %>
+        <% if FileTest.exist? Rails.root.join('app', 'assets', 'images', "#{this_project.title.downcase.delete(' ')}.gif") %>
           <%= image_tag "#{this_project.title.downcase.delete(' ')}.gif" %>
         <% else %>
           <%= javascript_include_tag "#{this_project.title.downcase.delete(' ')}" %>

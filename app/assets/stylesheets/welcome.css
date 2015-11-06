@@ -31,15 +31,13 @@ body {
   margin-left: 1.5%;
 }
 
-a {
-  color: #6496AF;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 nav {
   display: inline;
   margin-left: 1%;
+}
+
+nav a {
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 1.4em;
 }

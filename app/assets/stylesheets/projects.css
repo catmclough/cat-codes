@@ -22,8 +22,10 @@
    margin: 3em 15em 3em 15em;
 }
 
-.project-title {
-  color: #22313F;
+.project-title a{
+  color: #6496AF;
+  text-decoration: none;
+  font-weight: bold;
   letter-spacing: 3px;
   font-size: 1.5em;
   margin-left: 5%;
@@ -46,17 +48,27 @@
   margin-top: 2em;
   font-size: 18px;
   line-height: 180%;
+  color: #FFFFFF;
 }
 
-#project-link, #github-link{
+#project-link, #github-link {
   text-align: center;
   margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#project-link a, #github-link a{
+  color: #6496AF;
+  text-decoration: none;
+}
+
+#project-link a:hover, #github-link a:hover {
   text-decoration: underline;
 }
 
-#project-link:hover, #github-link:hover {
-  color: green;
-  font-weight: bold;
+#demo img{
+  display: block;
+  margin: auto;
 }
 
 #screenshots {
