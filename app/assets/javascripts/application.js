@@ -14,3 +14,4 @@
 //= require jquery_ujs
 
 //= require p5.min
+//= require app_assets
