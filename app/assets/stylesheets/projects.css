@@ -1,29 +1,30 @@
-#parted-clouds-left{
-  height: 100%;
-  float: left;
-  margin-left: -20%;
-  top: 0;
-}
-
-#parted-clouds-right{
-  height: 100%;
-  float: right;
-  margin-right: -10%;
-  top: 0;
-}
-
 #projects-index-container {
-  background-color: #FFFFFF;
-  margin: 3em 15em 3em 15em;
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background-color: #CDC8B6;
 }
 
 .language-name {
   font-family: 'Damion', cursive;
+  color: #22313F;
   font-size: 3em;
   margin-bottom: 0.5em;
 }
 
+#projects-box {
+   margin: 3em 15em 3em 15em;
+}
+
 .project-title {
+  color: #22313F;
+  letter-spacing: 3px;
   font-size: 1.5em;
   margin-left: 5%;
 }
