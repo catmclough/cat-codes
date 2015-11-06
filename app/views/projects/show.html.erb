@@ -1,9 +1,8 @@
 <div id="projects-show-container">
   <div id="project-title"><%= this_project.title %></div>
   <div id="project-date">Created on <%= this_project.date_of_creation.to_formatted_s(:long_ordinal) %></div>
+
   <div id="project-description"><%= this_project.description %></div>
-
-
   <div id="project-link">
     <% if this_project.url %>
       <%= link_to "#{this_project.url}", this_project.url %>
@@ -17,12 +16,18 @@
   </div>
 
   <% if this_project.language == "Processing" %>
-      <%= javascript_include_tag "#{this_project.title.downcase.delete(' ')}" %>
-  <% elsif this_project.language == "Ruby on Rails" %>
-      <div id="screenshots">
-        <%= image_tag "#{this_project.title.downcase.delete(' ')}.jpg" %>
-        <%= image_tag "#{this_project.title.downcase.delete(' ')}2.jpg" %>
+      <div id="demo">
+        <% if FileTest.exist? Rails.root.join('app', 'assets', 'images', "#{this_project.title.downcase.delete(' ')}.gif") %>
+          <%= image_tag "#{this_project.title.downcase.delete(' ')}.gif" %>
+        <% else %>
+          <%= javascript_include_tag "#{this_project.title.downcase.delete(' ')}" %>
+        <% end %>
       </div>
+  <% elsif this_project.language == "Ruby on Rails" %>
+    <div id="screenshots">
+      <%= image_tag "#{this_project.title.downcase.delete(' ')}.jpg" %>
+      <%= image_tag "#{this_project.title.downcase.delete(' ')}2.jpg" %>
+    </div>
   <% end %>
 
 </div>
